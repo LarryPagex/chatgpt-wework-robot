@@ -71,7 +71,7 @@ export default class TextChat extends Chat{
         const id = info?.FromUserName[0];
         const question = info?.Content[0];
 
-        this.reply(info, '正在生成回答', res);
+        this.reply(info, '', res);
 
         const openai = new OpenAI();
         const context = Session.update(id, {"role":"user" ,"content":question});
